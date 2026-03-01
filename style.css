@@ -1,38 +1,37 @@
-/* style.css */
+/* style.css (Light, luxe, elegant) */
 :root{
-  --bg0:#06070a;
-  --bg1:#0a0c10;
-  --surface: rgba(255,255,255,.04);
-  --surface2: rgba(255,255,255,.028);
-  --line: rgba(255,255,255,.10);
+  --bg: #fbfaf7;
+  --ink: #141414;
+  --muted: rgba(20,20,20,.68);
+  --muted2: rgba(20,20,20,.54);
 
-  --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.70);
-  --muted2: rgba(255,255,255,.58);
+  --surface: rgba(255,255,255,.78);
+  --surface2: rgba(255,255,255,.60);
+  --line: rgba(20,20,20,.10);
 
-  --shadow: 0 22px 90px rgba(0,0,0,.38);
+  --shadow: 0 18px 60px rgba(0,0,0,.06);
 }
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
   margin:0;
-  color:var(--text);
+  color: var(--ink);
   background:
-    radial-gradient(900px 520px at 18% -10%, rgba(125, 211, 252, .10) 0%, transparent 62%),
-    radial-gradient(900px 520px at 86% 8%, rgba(168, 85, 247, .10) 0%, transparent 60%),
+    radial-gradient(900px 520px at 18% -10%, rgba(56, 189, 248, .10) 0%, transparent 62%),
+    radial-gradient(900px 520px at 86% 8%, rgba(168, 85, 247, .10) 0%, transparent 62%),
     radial-gradient(760px 520px at 52% 110%, rgba(16, 185, 129, .08) 0%, transparent 62%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
+    linear-gradient(180deg, #ffffff, var(--bg));
   font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 .wrap{
-  max-width: 1020px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 30px 18px;
+  padding: 32px 18px;
 }
 
 .nav{
@@ -40,12 +39,12 @@ body{
   align-items:center;
   justify-content:space-between;
   gap:16px;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .brand{
   text-decoration:none;
-  color:var(--text);
+  color: var(--ink);
   font-weight: 560;
   letter-spacing:.2px;
   font-size: 14px;
@@ -57,10 +56,10 @@ body{
   margin-left: 18px;
   font-size: 13px;
 }
-.links a:hover{ color: var(--text); }
+.links a:hover{ color: var(--ink); }
 
 .hero{
-  padding: 84px 0 34px;
+  padding: 90px 0 42px;
 }
 
 .eyebrow{
@@ -73,22 +72,22 @@ body{
 
 h1{
   font-family: "Fraunces", serif;
-  font-size: clamp(40px, 5.2vw, 68px);
+  font-size: clamp(42px, 5.2vw, 72px);
   line-height: 1.02;
   margin: 10px 0 14px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
   font-weight: 520;
 }
 
 .sub{
   margin:0;
-  max-width: 72ch;
+  max-width: 76ch;
   color: var(--muted);
   font-size: 16px;
 }
 
 .section{
-  padding: 38px 0;
+  padding: 42px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -98,16 +97,16 @@ h1{
   justify-content: space-between;
   gap: 18px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 h2{
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.86);
-  font-weight: 600;
+  color: rgba(20,20,20,.86);
+  font-weight: 650;
 }
 
 .kicker{
@@ -117,23 +116,22 @@ h2{
 }
 
 .prose{
-  max-width: 80ch;
-  color: var(--text);
+  max-width: 82ch;
 }
 .prose p{ margin: 10px 0; }
 .muted{ color: var(--muted); }
 
 .cards{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 14px;
 }
 
 .card{
   background: linear-gradient(180deg, var(--surface), var(--surface2));
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 20px;
-  padding: 18px 18px 16px;
+  border: 1px solid rgba(20,20,20,.10);
+  border-radius: 22px;
+  padding: 20px 20px 18px;
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
@@ -146,7 +144,7 @@ h2{
   background:
     radial-gradient(640px 220px at 10% 0%, rgba(56, 189, 248, .10), transparent 62%),
     radial-gradient(540px 220px at 90% 10%, rgba(168, 85, 247, .08), transparent 62%);
-  opacity:.45;
+  opacity:.30;
   pointer-events:none;
 }
 
@@ -154,69 +152,63 @@ h2{
 
 .card-top{
   display:flex;
-  align-items:flex-start;
-  justify-content: space-between;
-  gap: 14px;
+  flex-direction: column; /* FIX: tags stack under title */
+  gap: 10px;
 }
 
-.card-titleblock{
-  min-width: 180px;
-}
-
-.card h3{
+.card-titleblock h3{
   margin: 0;
   font-size: 14px;
-  letter-spacing: .25px;
-  color: rgba(255,255,255,.90);
-  font-weight: 700;
+  color: rgba(20,20,20,.92);
+  font-weight: 750;
+  letter-spacing: .2px;
 }
 
 .card-subtitle{
   margin: 6px 0 0;
-  color: rgba(255,255,255,.70);
+  color: rgba(20,20,20,.64);
   font-size: 13px;
 }
 
 .tags{
   display:flex;
-  gap: 6px;
+  gap: 7px;
   flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .tag{
   display:inline-flex;
   align-items:center;
-  padding: 5px 10px;
+  padding: 6px 11px;
   border-radius: 999px;
   font-size: 11px;
   line-height: 1;
   color: #fff;
-  border: 1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.16);
   letter-spacing: .12em;
   text-transform: uppercase;
   white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
-/* Jewel-tone pill palette (luxe + techy) */
-.t-indigo{ background: rgba(79, 70, 229, .52); }
-.t-violet{ background: rgba(139, 92, 246, .50); }
-.t-cyan{ background: rgba(6, 182, 212, .46); }
-.t-emerald{ background: rgba(16, 185, 129, .46); }
-.t-amber{ background: rgba(245, 158, 11, .46); }
-.t-rose{ background: rgba(244, 63, 94, .46); }
+/* Jewel-tone palette (luxe + techy) */
+.t-indigo{ background: rgba(79, 70, 229, .78); }
+.t-violet{ background: rgba(139, 92, 246, .76); }
+.t-cyan{ background: rgba(6, 182, 212, .74); }
+.t-emerald{ background: rgba(16, 185, 129, .74); }
+.t-amber{ background: rgba(245, 158, 11, .78); }
+.t-rose{ background: rgba(244, 63, 94, .76); }
 
 .card-body{
   margin: 14px 0 12px;
-  color: rgba(255,255,255,.70);
+  color: rgba(20,20,20,.70);
   font-size: 14px;
 }
 
 .bullets{
   margin: 0 0 12px;
   padding-left: 18px;
-  color: rgba(255,255,255,.82);
+  color: rgba(20,20,20,.78);
   font-size: 13px;
 }
 
@@ -226,7 +218,7 @@ h2{
   display:flex;
   gap: 10px;
   align-items: flex-start;
-  border-top: 1px solid rgba(255,255,255,.10);
+  border-top: 1px solid rgba(20,20,20,.10);
   padding-top: 12px;
   margin-top: 12px;
 }
@@ -235,14 +227,14 @@ h2{
   font-size: 11px;
   letter-spacing: .20em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.62);
+  color: rgba(20,20,20,.58);
   padding-top: 2px;
   min-width: 62px;
 }
 
 .impact-text{
   font-size: 13px;
-  color: rgba(255,255,255,.86);
+  color: rgba(20,20,20,.86);
 }
 
 .contact{
@@ -261,25 +253,25 @@ h2{
   text-decoration:none;
   font-weight: 650;
   font-size: 13px;
-  color: #0a0c10;
-  background: rgba(255,255,255,.92);
-  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
+  background: #141414;
+  border: 1px solid rgba(20,20,20,.16);
   transition: transform .15s ease, opacity .15s ease;
 }
 
 .button.ghost{
   background: transparent;
-  color: rgba(255,255,255,.88);
-  border: 1px solid rgba(255,255,255,.16);
+  color: rgba(20,20,20,.86);
+  border: 1px solid rgba(20,20,20,.16);
 }
 
 .button:hover{
   transform: translateY(-1px);
-  opacity: .95;
+  opacity: .92;
 }
 
 .footer{
-  border-top: 1px solid var(--line);
+  border-top: 1px solid rgba(20,20,20,.10);
   display:flex;
   justify-content: space-between;
   gap: 12px;
@@ -288,7 +280,7 @@ h2{
 }
 
 @media (max-width: 560px){
-  .hero{ padding: 68px 0 26px; }
+  .hero{ padding: 72px 0 30px; }
   .links a{ margin-left: 14px; }
-  .card{ padding: 16px; }
+  .card{ padding: 18px; }
 }
